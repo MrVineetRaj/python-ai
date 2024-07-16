@@ -33,6 +33,6 @@ def get_response(message):
   prompt = f"For this project you are virtual assistant named as jarvis skills in general tasks like alex and google assistant so give me response to {message} in short"
   response = chat_session.send_message(prompt)
 
-  final_response = response.text.replace("*", "").replace("#", "")
+  final_response = response.text.replace("*", " ").replace("#", " ")
   return final_response
 

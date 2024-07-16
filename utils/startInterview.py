@@ -37,19 +37,21 @@ def startInterview():
     while(True):
         if("Ending this interview" not in response):
             r = sr.Recognizer()
-            with sr.Microphone() as source:
-                print("Interviewer is Listening...")
-                audio = r.listen(source,timeout=60)
-                print("Recognizing...")
-                ans = r.recognize_google(audio)
-                print("You said: ", ans)
-                response = get_question("continue",ans)
-                print("speakIng...",response)
-                speak(response)
+            try:
+                with sr.Microphone() as source:
+                    print("Interviewer is Listening...")
+                    audio = r.listen(source,timeout=60)
+                    print("Recognizing...")
+                    ans = r.recognize_google(audio)
+                    print("You said: ", ans)
+                    response = get_question("continue",ans)
+                    print("speakIng...",response)
+                    speak(response)
+            except sr.UnknownValueError:
+                print("Could not understand audio can you please repeat?")
         else:
             response = get_question("ending","")
             break
-
     print("Interviewer is speakIng...")
 
     with open(f"Interview_Analysis/{interview_label}.txt","w") as f:
