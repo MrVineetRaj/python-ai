@@ -22,7 +22,7 @@ Jarvis is an AI-powered assistant developed in Python, leveraging advanced machi
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/Jarvis-ai-assistant.git
+   git clone https://github.com/MrVineetRaj/python-ai.git
    cd Jarvis-ai-assistant
    ```
 
